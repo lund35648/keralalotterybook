@@ -4,33 +4,173 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Kerala Government Ticket</title>
+
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f.fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '744008402087520');
+fbq('track', 'PageView');
+</script>
+
 <style>
-:root{--accent:#ff4f79;--accent-dark:#d9365d;--bg:#fff3f7;--card:#fff;}
-body{margin:0;background:var(--bg);font-family:Arial,sans-serif;display:flex;justify-content:center;padding:8px;}
-.container{width:100%;max-width:400px;background:var(--card);padding:14px;border-radius:14px;box-shadow:0 4px 8px rgba(0,0,0,.14);}
-.topLogo img{width:130px;display:block;margin:0 auto 4px;}
-.livePop{display:inline-block;padding:6px 14px;border-radius:20px;background:linear-gradient(90deg,#2ecc71,#27ae60);color:#fff;font-size:12px;font-weight:bold;animation:pulse 1.2s infinite;}
-@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);}}
-.timerBar{background:#e8f5e9;color:#1b5e20;padding:6px;border-radius:8px;font-size:12px;text-align:center;font-weight:bold;margin-bottom:6px;}
-h2{text-align:center;margin:6px 0;color:#d9365d;font-size:18px;}
-input,select,button{width:100%;padding:9px;margin-bottom:8px;border-radius:8px;border:1px solid #ddd;font-size:13px;}
-.ticketBox{border:2px dashed #ff4f79;border-radius:12px;padding:10px;margin-bottom:8px;}
-.ticketAmount{background:#e8f5e9;color:#1b5e20;padding:6px;border-radius:8px;text-align:center;font-weight:bold;margin-bottom:6px;font-size:13px;}
-.ticketTitle{font-weight:bold;color:#d9365d;margin-bottom:4px;font-size:13px;}
-select[multiple]{height:55px;}
-.counter{font-size:11px;margin-top:3px;}
-.selectedList{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px;}
-.chip{background:#ffe3ea;color:#d9365d;padding:3px 7px;border-radius:10px;font-size:11px;display:flex;align-items:center;gap:5px;}
-.chip span{cursor:pointer;font-weight:bold;}
-button{background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#fff;border:none;font-weight:bold;cursor:pointer;font-size:14px;}
+:root{
+--accent:#ff1744;
+--accent-dark:#d50000;
+--bg1:#fff0f5;
+--bg2:#ffe6f0;
+--card:#ffffff;
+}
+
+body{
+margin:0;
+background:linear-gradient(135deg,var(--bg1),var(--bg2));
+font-family:Arial,sans-serif;
+display:flex;
+justify-content:center;
+padding:10px;
+}
+
+.container{
+width:100%;
+max-width:400px;
+background:var(--card);
+padding:16px;
+border-radius:16px;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+.heroBox{
+background:linear-gradient(135deg,#ff4f79,#ff758c);
+color:#fff;
+padding:14px;
+border-radius:12px;
+text-align:center;
+margin-bottom:10px;
+box-shadow:0 4px 10px rgba(0,0,0,.15);
+}
+.heroBox h1{margin:0;font-size:18px;}
+.heroBox p{margin:4px 0 0;font-size:12px;opacity:.9;}
+
+.topLogo img{
+width:120px;
+display:block;
+margin:0 auto 6px;
+}
+
+.livePop{
+display:inline-block;
+padding:6px 14px;
+border-radius:20px;
+background:linear-gradient(90deg,#2ecc71,#27ae60);
+color:#fff;
+font-size:12px;
+font-weight:bold;
+animation:pulse 1.2s infinite;
+}
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
+}
+
+.timerBar{
+background:#e8f5e9;
+color:#1b5e20;
+padding:6px;
+border-radius:8px;
+font-size:12px;
+text-align:center;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+input,select,button{
+width:100%;
+padding:10px;
+margin-bottom:8px;
+border-radius:8px;
+border:1px solid #ddd;
+font-size:13px;
+}
+
+.ticketBox{
+border:2px dashed #ff4f79;
+border-radius:12px;
+padding:10px;
+margin-bottom:8px;
+background:#fff7fa;
+}
+
+.ticketAmount{
+background:#e8f5e9;
+color:#1b5e20;
+padding:6px;
+border-radius:8px;
+text-align:center;
+font-weight:bold;
+margin-bottom:6px;
+font-size:13px;
+}
+
+select[multiple]{height:90px;}
+
+.trustBadges{
+font-size:11px;
+color:#2e7d32;
+background:#e8f5e9;
+padding:8px;
+border-radius:8px;
+margin-bottom:8px;
+text-align:center;
+font-weight:bold;
+}
+
+button{
+background:linear-gradient(90deg,var(--accent),var(--accent-dark));
+color:#fff;
+border:none;
+font-weight:bold;
+cursor:pointer;
+font-size:15px;
+padding:12px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,.2);
+transition:.2s;
+}
+button:hover{transform:scale(1.03);}
 button:disabled{opacity:.5;cursor:not-allowed;}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;}
-.modalBox{background:#fff;width:92%;max-width:360px;border-radius:14px;padding:16px;}
-.modalBox h3{text-align:center;color:#d9365d;margin:0 0 10px;}
-.summary{font-size:13px;line-height:1.6;}
-.modalBtns{display:flex;gap:10px;margin-top:12px;}
-.modalBtns button{flex:1;}
-.cancelBtn{background:#ccc;color:#333;}
+
+#livePopup{
+position:fixed;
+bottom:90px;
+left:10px;
+right:10px;
+margin:auto;
+max-width:330px;
+background:#fff;
+border-radius:12px;
+box-shadow:0 0 25px rgba(0,0,0,0.4);
+padding:12px;
+display:none;
+z-index:999999;
+font-size:13px;
+}
+
+#livePopup.show{
+display:block;
+animation:fadeIn 0.5s;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
 </style>
 </head>
 
@@ -41,57 +181,42 @@ button:disabled{opacity:.5;cursor:not-allowed;}
 <img src="https://i.postimg.cc/XvXzF7RJ/IMG-20251225-WA0003.jpg">
 </div>
 
+<div class="heroBox">
+<h1>🎉 Kerala Lucky Draw 2026</h1>
+<p>Win Big Prizes | Limited Seats Available</p>
+</div>
+
 <div style="text-align:center;margin-bottom:6px;">
 <span class="livePop">🟢 LIVE BOOKING ACTIVE</span>
 </div>
 
 <div class="timerBar" id="timer">⏳ Booking closes in 30:00</div>
 
-<h2>Kerala Government Ticket</h2>
-
 <input id="name" placeholder="Full Name">
 <input id="mobile" placeholder="Mobile Number">
 
-<select id="state">
-  <option value="">Select State</option>
-  <option>Kerala</option>
-  <option>Tamil Nadu</option>
-  <option>Karnataka</option>
-  <option>Andhra Pradesh</option>
-  <option>Telangana</option>
-</select>
-
-<select id="language">
-<option>English</option>
-<option>Hindi</option>
-<option>Malayalam</option>
-<option>Tamil</option>
-<option>Kannada</option>
-<option>Telugu</option>
-</select>
-
 <div class="ticketBox">
-<div class="ticketAmount" id="ticketAmount">💰 Total Amount: ₹0</div>
-<div class="ticketTitle">🎟 Select Lucky Ticket (₹40 per ticket)</div>
+<div class="ticketAmount" id="ticketAmount">💰 Minimum 3 tickets required</div>
 <select id="ticket" multiple></select>
-<div class="counter" id="counter">Selected: 0 tickets</div>
-<div class="selectedList" id="selectedList"></div>
+
+<!-- Selected Tickets Show Here -->
+<div id="selectedTickets" style="margin-top:6px;"></div>
+
 </div>
 
 <input id="amount" placeholder="Total Amount (₹)" readonly>
+
+<div class="trustBadges">
+✔ Govt Approved | ✔ 100% Secure | ✔ Instant Confirmation
+</div>
+
 <button id="submitBtn" disabled>Submit & Continue</button>
 
 </div>
 
-<div class="modal" id="previewModal">
-  <div class="modalBox">
-    <h3>Payment Preview</h3>
-    <div class="summary" id="previewContent"></div>
-    <div class="modalBtns">
-      <button class="cancelBtn" onclick="closePreview()">Cancel</button>
-      <button onclick="proceedWhatsApp()">Confirm & WhatsApp</button>
-    </div>
-  </div>
+<div id="livePopup">
+<div id="liveText"></div>
+<div class="liveTime">Just now</div>
 </div>
 
 <script>
@@ -102,37 +227,50 @@ setInterval(()=>{
  if(time>0) time--;
 },1000);
 
-const TICKET_PRICE=40,MIN_TICKETS=3;
+const TICKET_PRICE=40;
+const MIN_TICKETS=3;
+
 const ticket=document.getElementById("ticket"),
-selectedList=document.getElementById("selectedList"),
 amount=document.getElementById("amount"),
 ticketAmount=document.getElementById("ticketAmount"),
 submitBtn=document.getElementById("submitBtn"),
-counter=document.getElementById("counter"),
-language=document.getElementById("language"),
-state=document.getElementById("state"),
 nameI=document.getElementById("name"),
 mobileI=document.getElementById("mobile"),
-previewModal=document.getElementById("previewModal"),
-previewContent=document.getElementById("previewContent");
+selectedTicketsDiv=document.getElementById("selectedTickets");
 
-for(let i=0;i<3000;i++){
+for(let i=0;i<2000;i++){
  let n=("000000"+Math.floor(Math.random()*999999)).slice(-6);
  let o=document.createElement("option");
- o.value="KL"+n;o.textContent="KL"+n;
+ o.value="KL"+n;
+ o.textContent="KL"+n;
  ticket.appendChild(o);
 }
 
 function refresh(){
- let sel=[...ticket.selectedOptions].map(o=>o.value);
- counter.textContent=`Selected: ${sel.length} tickets`;
- selectedList.innerHTML="";
- sel.forEach(t=>{
-   let c=document.createElement("div");
-   c.className="chip";
-   c.innerHTML=`${t} <span onclick="removeTicket('${t}')">×</span>`;
-   selectedList.appendChild(c);
+ let sel=[...ticket.selectedOptions];
+
+ selectedTicketsDiv.innerHTML="";
+ 
+ sel.forEach(o=>{
+   let tag=document.createElement("span");
+   tag.style.display="inline-block";
+   tag.style.background="#ffd6e0";
+   tag.style.color="#c2185b";
+   tag.style.padding="5px 10px";
+   tag.style.margin="3px";
+   tag.style.borderRadius="20px";
+   tag.style.fontSize="12px";
+   tag.style.cursor="pointer";
+   tag.textContent=o.value+" ×";
+   
+   tag.onclick=()=>{
+     o.selected=false;
+     refresh();
+   };
+
+   selectedTicketsDiv.appendChild(tag);
  });
+
  if(sel.length>=MIN_TICKETS){
    let total=sel.length*TICKET_PRICE;
    amount.value="₹ "+total;
@@ -141,51 +279,65 @@ function refresh(){
    amount.value="";
    ticketAmount.textContent="💰 Minimum 3 tickets required";
  }
- submitBtn.disabled=!(sel.length>=3 && nameI.value && mobileI.value && state.value);
+
+ submitBtn.disabled=!(sel.length>=MIN_TICKETS && nameI.value.trim() && mobileI.value.length>=10);
 }
 
 ticket.addEventListener("change",refresh);
-[nameI,mobileI,state].forEach(i=>i.addEventListener("input",refresh));
+[nameI,mobileI].forEach(i=>i.addEventListener("input",refresh));
 
-window.removeTicket=(t)=>{
- [...ticket.options].forEach(o=>{if(o.value===t) o.selected=false;});
- refresh();
-};
+mobileI.addEventListener("input",()=>{
+ mobileI.value = mobileI.value.replace(/\D/g,'');
+});
 
 submitBtn.onclick=()=>{
- let sel=[...ticket.selectedOptions].map(o=>o.value).join(", ");
- previewContent.innerHTML=`
-<b>Name:</b> ${nameI.value}<br>
-<b>Mobile:</b> ${mobileI.value}<br>
-<b>State:</b> ${state.value}<br><br>
-<b>Tickets Selected:</b><br>${sel}<br><br>
-<b>Total Tickets:</b> ${ticket.selectedOptions.length}<br>
-<b>Price per Ticket:</b> ₹40<br>
-<b>Total Amount:</b> ${amount.value}<br><br>
-<b>Payment Mode:</b> WhatsApp Confirmation<br>
-⚠️ Please verify details before proceeding.
- `;
- previewModal.style.display="flex";
-};
+ fbq('track','Lead');
 
-function closePreview(){previewModal.style.display="none";}
-
-function proceedWhatsApp(){
  let tickets=[...ticket.selectedOptions].map(o=>o.value).join(", ");
  let msg=`New Booking
 Name: ${nameI.value}
 Mobile: ${mobileI.value}
-State: ${state.value}
 
 Tickets:
 ${tickets}
 
 Total Tickets: ${ticket.selectedOptions.length}
-Amount: ${amount.value}
-Language: ${language.value}`;
- window.open("https://wa.me/+919608453596?text="+encodeURIComponent(msg),"_blank");
- previewModal.style.display="none";
+Amount: ${amount.value}`;
+
+ window.open("https://wa.me/+917070974038?text="+encodeURIComponent(msg),"_blank");
+};
+
+const liveNames=["Arjun","Karthik","Ramesh","Lakshmi","Anjali","Priya","Vijay","Naveen"];
+const liveCities=["Bengaluru","Chennai","Hyderabad","Kochi","Mysuru","Madurai"];
+
+function randomPhone(){
+let n="9";
+for(let i=0;i<9;i++) n+=Math.floor(Math.random()*10);
+return n.substring(0,3)+"****"+n.substring(7);
 }
+
+function randomTicketCount(){
+ return Math.floor(Math.random()*10)+3;
+}
+
+function showLivePopup(){
+let name=liveNames[Math.floor(Math.random()*liveNames.length)];
+let city=liveCities[Math.floor(Math.random()*liveCities.length)];
+let ph=randomPhone();
+let ticketCount=randomTicketCount();
+
+document.getElementById("liveText").innerHTML=
+"<span class='liveName'>"+name+"</span> ("+ph+") from "+city+
+" just booked "+ticketCount+" tickets 🎟🔥";
+
+let popup=document.getElementById("livePopup");
+popup.classList.add("show");
+setTimeout(()=>popup.classList.remove("show"),5000);
+}
+
+setTimeout(showLivePopup,2000);
+setInterval(showLivePopup,8000);
 </script>
+
 </body>
 </html>
