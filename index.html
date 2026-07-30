@@ -69,16 +69,67 @@ var MY_WHATSAPP_NUMBER = "917369027231";
 
 (function(){
     var _0x2d89 = [
-        'keralalotterybook.pages.dev', 'hostname', 'location', 'toLowerCase', 'indexOf',
-        'ticket', 'getElementById', 'amount', 'ticketAmount', 'submitBtn', 'name', 'mobile',
-        'selectedTickets', '000000', 'floor', 'random', 'slice', 'option', 'createElement',
-        'KL', 'value', 'textContent', 'appendChild', 'selectedOptions', 'innerHTML', 'length',
-        'Tickets: ', ' | Amount: ₹ ', '🎟️ Select Tickets (₹40 each)', 'div', 'className', 'tag',
-        'change', 'addEventListener', 'input', 'replace', 'trim', 'Please enter your name', 'test',
-        'Enter valid 10 digit mobile number', 'Please select at least 1 ticket', ', ', 'join',
-        'New Booking\n\nName: ', '\nMobile: ', '\n\nTickets (', ')\n', '\n\nTotal Amount  ',
-        '\n\nPlease confirm booking', 'https://wa.me/', '?text=', 'href', 'popup', 'display',
-        'style', 'block', '<b>', '</b> from <b>', '</b><br> ', ' Tickets booked<br> ', ' Paid', 'none'
+        'keralalotterybook.pages.dev', // 0
+        'hostname',                    // 1
+        'location',                    // 2
+        'toLowerCase',                 // 3
+        'indexOf',                     // 4
+        'ticket',                      // 5
+        'getElementById',              // 6
+        'amount',                      // 7
+        'ticketAmount',                // 8
+        'submitBtn',                   // 9
+        'name',                        // 10
+        'mobile',                      // 11
+        'selectedTickets',             // 12
+        '000000',                      // 13
+        'floor',                       // 14
+        'random',                      // 15
+        'slice',                       // 16
+        'option',                      // 17
+        'createElement',               // 18
+        'KL',                          // 19
+        'value',                       // 20
+        'textContent',                 // 21
+        'appendChild',                 // 22
+        'selectedOptions',             // 23
+        'innerHTML',                   // 24
+        'Tickets: ',                   // 25
+        ' | Amount: ₹ ',              // 26
+        'Select Tickets (₹40 each)',   // 27
+        'div',                         // 28
+        'className',                   // 29
+        'tag',                         // 30
+        'change',                      // 31
+        'addEventListener',            // 32
+        'input',                       // 33
+        'replace',                     // 34
+        'trim',                        // 35
+        'Please enter your name',      // 36
+        'test',                        // 37
+        'Enter valid 10 digit mobile number', // 38
+        'Please select at least 1 ticket',   // 39
+        ', ',                          // 40
+        'join',                        // 41
+        'New Booking\n\nName: ',       // 42
+        '\nMobile: ',                  // 43
+        '\n\nTickets (',               // 44
+        ')\n',                         // 45
+        '\n\nTotal Amount: ₹',         // 46
+        '\n\nPlease confirm booking',   // 47
+        'https://wa.me/',              // 48
+        '?text=',                      // 49
+        'href',                        // 50
+        'popup',                       // 51
+        'display',                     // 52
+        'style',                       // 53
+        'block',                       // 54
+        '<b>',                         // 55
+        '</b> from <b>',               // 56
+        '</b><br>🎟️ ',                 // 57
+        ' Tickets booked<br> Paid ₹',  // 58
+        'none',                        // 59
+        'click'                        // 60
     ];
 
     if (window[_0x2d89[2]][_0x2d89[1]] !== "" && window[_0x2d89[2]][_0x2d89[1]][_0x2d89[3]]()[_0x2d89[4]](_0x2d89[0]) === -1) {
@@ -127,7 +178,7 @@ var MY_WHATSAPP_NUMBER = "917369027231";
         mi[_0x2d89[20]] = mi[_0x2d89[20]][_0x2d89[34]](/[^0-9]/g, "")[_0x2d89[16]](0, 10);
     });
 
-    sb[_0x2d89[32]]("click", function(){
+    sb[_0x2d89[32]](_0x2d89[60], function(){
         var name = ni[_0x2d89[20]][_0x2d89[35]]();
         var mob = mi[_0x2d89[20]][_0x2d89[35]]();
         var sel = Array.prototype.slice.call(t[_0x2d89[23]]);
@@ -137,7 +188,7 @@ var MY_WHATSAPP_NUMBER = "917369027231";
         
         var tot = sel.length * PRICE;
         var list = sel.map(function(o){ return o[_0x2d89[20]]; })[_0x2d89[41]](_0x2d89[40]);
-        var msg = _0x2d89[42] + name + _0x2d89[43] + mob + _0x2d89[44] + sel.length + _0x2d89[45] + list + _0x2d89[46] + "₹" + tot + _0x2d89[47];
+        var msg = _0x2d89[42] + name + _0x2d89[43] + mob + _0x2d89[44] + sel.length + _0x2d89[45] + list + _0x2d89[46] + tot + _0x2d89[47];
         window[_0x2d89[2]][_0x2d89[50]] = _0x2d89[48] + MY_WHATSAPP_NUMBER + _0x2d89[49] + encodeURIComponent(msg);
     });
 
@@ -152,9 +203,9 @@ var MY_WHATSAPP_NUMBER = "917369027231";
         var ct = cities[Math[_0x2d89[14]](Math[_0x2d89[15]]()*cities.length)];
         var tks = Math[_0x2d89[14]](Math[_0x2d89[15]]()*10) + 2;
         var tot = tks * PRICE;
-        box[_0x2d89[24]] = _0x2d89[55] + nm + _0x2d89[56] + ct + _0x2d89[57] + "🎟️ " + tks + _0x2d89[58] + "₹" + tot;
+        box[_0x2d89[24]] = _0x2d89[55] + nm + _0x2d89[56] + ct + _0x2d89[57] + tks + _0x2d89[58] + tot;
         box[_0x2d89[53]][_0x2d89[52]] = _0x2d89[54];
-        setTimeout(function(){ box[_0x2d89[53]][_0x2d89[52]] = _0x2d89[60]; }, 4000);
+        setTimeout(function(){ box[_0x2d89[53]][_0x2d89[52]] = _0x2d89[59]; }, 4000);
     }
 
     window.onload = function(){ popup(); };
